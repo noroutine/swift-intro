@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,14 +20,21 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Push the button" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f29-eD-egl">
                                 <rect key="frame" x="16" y="20" width="75" height="18"/>
                                 <accessibility key="accessibilityConfiguration" label="Label"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="ygY-HC-ijT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="116" y="20" width="169" height="18"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ygY-HC-ijT"/>
+                                    </mask>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="158" y="20" width="84" height="18"/>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ygY-HC-ijT"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21A-8D-9af" customClass="MyButton" customModule="SwiftIntro" customModuleProvider="target">
@@ -34,35 +42,63 @@
                                 <state key="normal" title="Get me that Fibonacci!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="113" y="46" width="175" height="30"/>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="163" y="63" width="75" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="buttonTouched:" destination="BYZ-38-t0r" eventType="touchDown" id="QLv-PS-Rjv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5O-kw-WCQ">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="179" y="122" width="42" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOC-T7-p1a" customClass="MyProgrammaticLayoutView" customModule="SwiftIntro" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.71764705882352942" green="0.82352941176470584" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 </variation>
-                            </label>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93888344568137438" green="0.98060114178503122" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="21A-8D-9af" firstAttribute="centerX" secondItem="f29-eD-egl" secondAttribute="centerX" id="2b5-2o-NrF"/>
+                            <constraint firstItem="jOC-T7-p1a" firstAttribute="top" secondItem="21A-8D-9af" secondAttribute="bottom" constant="22" id="6bM-ej-b2L"/>
+                            <constraint firstItem="21A-8D-9af" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="97" id="EJa-wq-d1u"/>
+                            <constraint firstItem="21A-8D-9af" firstAttribute="top" secondItem="f29-eD-egl" secondAttribute="bottom" constant="8" symbolic="YES" id="LWv-bw-rQY"/>
+                            <constraint firstItem="jOC-T7-p1a" firstAttribute="centerX" secondItem="21A-8D-9af" secondAttribute="centerX" id="Qy8-i6-Dqi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jOC-T7-p1a" secondAttribute="bottom" constant="14" id="U9m-hi-Yxh"/>
+                            <constraint firstItem="jOC-T7-p1a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WZp-J1-SJd"/>
+                            <constraint firstItem="jOC-T7-p1a" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cRl-CU-3ph"/>
+                            <constraint firstItem="f29-eD-egl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="chE-ES-cUD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f29-eD-egl" secondAttribute="trailing" constant="99" id="niC-ET-EXk"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="g5O-kw-WCQ"/>
+                                <exclude reference="jOC-T7-p1a"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6bM-ej-b2L"/>
+                                <exclude reference="Qy8-i6-Dqi"/>
+                                <exclude reference="WZp-J1-SJd"/>
+                                <exclude reference="cRl-CU-3ph"/>
+                                <exclude reference="chE-ES-cUD"/>
+                                <exclude reference="niC-ET-EXk"/>
+                                <exclude reference="2b5-2o-NrF"/>
+                                <exclude reference="EJa-wq-d1u"/>
+                                <exclude reference="LWv-bw-rQY"/>
+                                <exclude reference="U9m-hi-Yxh"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=compact-widthClass=compact">
+                        <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="g5O-kw-WCQ"/>
+                                <include reference="jOC-T7-p1a"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="6bM-ej-b2L"/>
+                                <include reference="Qy8-i6-Dqi"/>
+                                <include reference="WZp-J1-SJd"/>
+                                <include reference="cRl-CU-3ph"/>
+                                <include reference="chE-ES-cUD"/>
+                                <include reference="niC-ET-EXk"/>
+                                <include reference="2b5-2o-NrF"/>
+                                <include reference="EJa-wq-d1u"/>
+                                <include reference="LWv-bw-rQY"/>
+                                <include reference="U9m-hi-Yxh"/>
                             </mask>
                         </variation>
                     </view>

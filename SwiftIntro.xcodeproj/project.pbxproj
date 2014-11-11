@@ -13,6 +13,7 @@
 		490C6B0F1A0FC02F006A9AA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490C6B0E1A0FC02F006A9AA8 /* Images.xcassets */; };
 		490C6B121A0FC02F006A9AA8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490C6B101A0FC02F006A9AA8 /* LaunchScreen.xib */; };
 		490C6B1E1A0FC02F006A9AA8 /* SwiftIntroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C6B1D1A0FC02F006A9AA8 /* SwiftIntroTests.swift */; };
+		495D5D9C1A1011320053E02A /* MyProgrammaticLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495D5D9B1A1011320053E02A /* MyProgrammaticLayoutView.swift */; };
 		496FBD3E1A0FE51000B18157 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FBD3D1A0FE51000B18157 /* MyButton.swift */; };
 		496FBD401A0FE77900B18157 /* Greeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FBD3F1A0FE77900B18157 /* Greeter.swift */; };
 		496FBD421A0FEB7D00B18157 /* FibonacciGreeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FBD411A0FEB7D00B18157 /* FibonacciGreeter.swift */; };
@@ -40,6 +41,7 @@
 		490C6B171A0FC02F006A9AA8 /* SwiftIntroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftIntroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		490C6B1C1A0FC02F006A9AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490C6B1D1A0FC02F006A9AA8 /* SwiftIntroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIntroTests.swift; sourceTree = "<group>"; };
+		495D5D9B1A1011320053E02A /* MyProgrammaticLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgrammaticLayoutView.swift; sourceTree = "<group>"; };
 		496FBD3D1A0FE51000B18157 /* MyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		496FBD3F1A0FE77900B18157 /* Greeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Greeter.swift; sourceTree = "<group>"; };
 		496FBD411A0FEB7D00B18157 /* FibonacciGreeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibonacciGreeter.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				490C6B071A0FC02F006A9AA8 /* AppDelegate.swift */,
 				490C6B091A0FC02F006A9AA8 /* ViewController.swift */,
 				490C6B0B1A0FC02F006A9AA8 /* Main.storyboard */,
+				495D5D9B1A1011320053E02A /* MyProgrammaticLayoutView.swift */,
 				496FBD3F1A0FE77900B18157 /* Greeter.swift */,
 				496FBD411A0FEB7D00B18157 /* FibonacciGreeter.swift */,
 				496FBD431A0FEBBE00B18157 /* FibonacciGenerator.swift */,
@@ -228,6 +231,7 @@
 				490C6B081A0FC02F006A9AA8 /* AppDelegate.swift in Sources */,
 				496FBD441A0FEBBE00B18157 /* FibonacciGenerator.swift in Sources */,
 				496FBD401A0FE77900B18157 /* Greeter.swift in Sources */,
+				495D5D9C1A1011320053E02A /* MyProgrammaticLayoutView.swift in Sources */,
 				496FBD421A0FEB7D00B18157 /* FibonacciGreeter.swift in Sources */,
 				496FBD3E1A0FE51000B18157 /* MyButton.swift in Sources */,
 			);
