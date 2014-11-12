@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490411A51A127F69001BA685 /* TestSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 490411A41A127F69001BA685 /* TestSelectors.m */; };
+		490411A71A13BC80001BA685 /* ButtonEventTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490411A61A13BC80001BA685 /* ButtonEventTarget.swift */; };
 		490C6B081A0FC02F006A9AA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C6B071A0FC02F006A9AA8 /* AppDelegate.swift */; };
 		490C6B0A1A0FC02F006A9AA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C6B091A0FC02F006A9AA8 /* ViewController.swift */; };
 		490C6B0D1A0FC02F006A9AA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490C6B0B1A0FC02F006A9AA8 /* Main.storyboard */; };
@@ -31,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490411A21A127F69001BA685 /* SwiftIntro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftIntro-Bridging-Header.h"; sourceTree = "<group>"; };
+		490411A31A127F69001BA685 /* TestSelectors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSelectors.h; sourceTree = "<group>"; };
+		490411A41A127F69001BA685 /* TestSelectors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSelectors.m; sourceTree = "<group>"; };
+		490411A61A13BC80001BA685 /* ButtonEventTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonEventTarget.swift; sourceTree = "<group>"; };
 		490C6B021A0FC02F006A9AA8 /* SwiftIntro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIntro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		490C6B061A0FC02F006A9AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490C6B071A0FC02F006A9AA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,9 +75,12 @@
 		490C6AF91A0FC02F006A9AA8 = {
 			isa = PBXGroup;
 			children = (
+				490411A31A127F69001BA685 /* TestSelectors.h */,
+				490411A41A127F69001BA685 /* TestSelectors.m */,
 				490C6B041A0FC02F006A9AA8 /* SwiftIntro */,
 				490C6B1A1A0FC02F006A9AA8 /* SwiftIntroTests */,
 				490C6B031A0FC02F006A9AA8 /* Products */,
+				490411A21A127F69001BA685 /* SwiftIntro-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +100,7 @@
 				490C6B091A0FC02F006A9AA8 /* ViewController.swift */,
 				490C6B0B1A0FC02F006A9AA8 /* Main.storyboard */,
 				495D5D9B1A1011320053E02A /* MyProgrammaticLayoutView.swift */,
+				490411A61A13BC80001BA685 /* ButtonEventTarget.swift */,
 				496FBD3F1A0FE77900B18157 /* Greeter.swift */,
 				496FBD411A0FEB7D00B18157 /* FibonacciGreeter.swift */,
 				496FBD431A0FEBBE00B18157 /* FibonacciGenerator.swift */,
@@ -228,11 +238,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				490C6B0A1A0FC02F006A9AA8 /* ViewController.swift in Sources */,
+				490411A71A13BC80001BA685 /* ButtonEventTarget.swift in Sources */,
 				490C6B081A0FC02F006A9AA8 /* AppDelegate.swift in Sources */,
 				496FBD441A0FEBBE00B18157 /* FibonacciGenerator.swift in Sources */,
 				496FBD401A0FE77900B18157 /* Greeter.swift in Sources */,
 				495D5D9C1A1011320053E02A /* MyProgrammaticLayoutView.swift in Sources */,
 				496FBD421A0FEB7D00B18157 /* FibonacciGreeter.swift in Sources */,
+				490411A51A127F69001BA685 /* TestSelectors.m in Sources */,
 				496FBD3E1A0FE51000B18157 /* MyButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,9 +370,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftIntro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftIntro-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -368,9 +383,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftIntro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftIntro-Bridging-Header.h";
 			};
 			name = Release;
 		};

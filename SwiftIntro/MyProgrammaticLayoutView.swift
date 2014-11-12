@@ -10,15 +10,21 @@ import UIKit
 
 class MyProgrammaticLayoutView: UIView {
 
-    var myButton: MyButton
+    var myButton: UIButton
+
+    var myButtonTarget: ButtonEventTarget
     
     required init(coder aDecoder: NSCoder) {
-        myButton = MyButton()
+        myButtonTarget = ButtonEventTarget()
         
+        myButton = UIButton(frame: CGRect(x: 10, y: 10, width: 100, height: 20))
+        
+        myButton.backgroundColor = UIColor.blueColor()
         myButton.setTitle("Yo", forState: UIControlState.Normal)
         myButton.setNeedsDisplayInRect(CGRect(x: 0, y: 0, width: 100, height: 100))
+        myButton.addTarget(myButtonTarget, action: "handle", forControlEvents: UIControlEvents.TouchDown)
 
         super.init(coder: aDecoder)
-        self.addSubview(myButton);
+        self.addSubview(myButton)
     }
 }
