@@ -11,5 +11,6 @@ import UIKit
 class ButtonEventTarget: NSObject {
     func handle() {
         NSLog("Touched")
+        
     }
 }

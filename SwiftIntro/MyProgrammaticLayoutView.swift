@@ -23,7 +23,7 @@ class MyProgrammaticLayoutView: UIView {
         myButton.setTitle("Yo", forState: UIControlState.Normal)
         myButton.setNeedsDisplayInRect(CGRect(x: 0, y: 0, width: 100, height: 100))
         myButton.addTarget(myButtonTarget, action: "handle", forControlEvents: UIControlEvents.TouchDown)
-
+        
         super.init(coder: aDecoder)
         self.addSubview(myButton)
     }
