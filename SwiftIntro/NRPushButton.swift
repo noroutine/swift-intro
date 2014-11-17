@@ -15,7 +15,7 @@ class NRPushButton: UIView {
 
     var state: NRPushButtonState
     
-    var buttonTag: String?
+    var buttonText: String?
 
     required init(coder aDecoder: NSCoder) {
         self.state = NRPushButtonState()
@@ -31,15 +31,6 @@ class NRPushButton: UIView {
         super.init(frame: frame)
         
         self.backgroundColor = self.state.color
-    }
-    
-    func setState(state: NRPushButtonState) {
-        self.state = state
-        setNeedsDisplay()
-    }
-    
-    func setTag(buttonTag: String) {
-        self.buttonTag = buttonTag
     }
     
 }

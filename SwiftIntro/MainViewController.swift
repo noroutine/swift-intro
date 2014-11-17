@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
 
     var greeter: Greeter = Greeter()
     
+    var name: NRNameGenerator = NRNameGenerator()
+    
     var label: UILabel!
 
     override func viewDidLoad() {
@@ -21,7 +23,7 @@ class MainViewController: UIViewController {
         UIApplication.sharedApplication()
             .setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.None)
 
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "buttonTapped:"))
+//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "buttonTapped:"))
 
         let tappableSize = 40.0
         
@@ -38,10 +40,14 @@ class MainViewController: UIViewController {
                 button?.backgroundColor = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: CGFloat(drand48()))
                 
                 button?.layer.cornerRadius = 5
-                button?.layer.borderColor = UIColor.blueColor().CGColor
-                button?.layer.borderWidth = 1
+//                button?.layer.borderColor = UIColor.blueColor().CGColor
+//                button?.layer.borderWidth = 1
                 
                 button?.bounds = CGRectInset(button!.frame, 3.0, 3.0)
+                
+                button?.buttonText = name.next();
+                
+                button?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "buttonTapped:"))
                 
                 self.view.addSubview(button!)
                 
@@ -51,20 +57,20 @@ class MainViewController: UIViewController {
             (top, left) = (top + tappableSize, 0.0)
         }
         
-        var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "buttonTapped:", userInfo: nil, repeats: true)
+//        var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "buttonTapped:", userInfo: nil, repeats: true)
         
-//        NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
-
     }
 
     
     func buttonTapped(sender: AnyObject) {
-        let hello = greeter.hello()
-        for subview in self.view.subviews {
-            (subview as NRPushButton).backgroundColor = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: CGFloat(drand48()))
-        }
+//        for subview in self.view.subviews {
+//            (subview as NRPushButton).backgroundColor = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: CGFloat(drand48()))
+//        }
+        let button: NRPushButton! = ((sender as UITapGestureRecognizer).view) as NRPushButton
+        
+        button.backgroundColor =  UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: CGFloat(drand48()))
 
-        NSLog(hello)
+        NSLog(greeter.hello(button.buttonText!))
     }
     
     override func didReceiveMemoryWarning() {

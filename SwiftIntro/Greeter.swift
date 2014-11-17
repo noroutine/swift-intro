@@ -10,7 +10,7 @@ import Foundation
 
 class Greeter {
     
-    func hello() -> String {
-        return "Hello, Alex"
+    func hello(who: String) -> String {
+        return "Hello, \(who.capitalizedString)!!!"
     }
 }
