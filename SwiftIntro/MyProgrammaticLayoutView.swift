@@ -8,11 +8,15 @@
 
 import UIKit
 
+typealias ButtonCallback = (AnyObject, UIEvent) -> ()
+
 class MyProgrammaticLayoutView: UIView {
 
     var myButton: UIButton
 
     var myButtonTarget: ButtonEventTarget
+
+    var callbackBlock: ButtonCallback?
     
     required init(coder aDecoder: NSCoder) {
         myButtonTarget = ButtonEventTarget()
@@ -22,9 +26,20 @@ class MyProgrammaticLayoutView: UIView {
         myButton.backgroundColor = UIColor.blueColor()
         myButton.setTitle("Yo", forState: UIControlState.Normal)
         myButton.setNeedsDisplayInRect(CGRect(x: 0, y: 0, width: 100, height: 100))
-        myButton.addTarget(myButtonTarget, action: "handle", forControlEvents: UIControlEvents.TouchDown)
         
         super.init(coder: aDecoder)
+
         self.addSubview(myButton)
+
+
+        myButton.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchDown)
+        
+        // setup button callback
+        self.callbackBlock = buttonPressed
     }
+
+    func buttonPressed(sender: AnyObject, event: UIEvent) -> Void {
+        NSLog("Touched")
+    }
+
 }
