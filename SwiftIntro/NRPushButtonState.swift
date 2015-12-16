@@ -16,4 +16,11 @@ class NRPushButtonState {
     init() {
         self.color = UIColor.redColor()
     }
+
+    class func withColor(color: UIColor) -> NRPushButtonState {
+        let state = NRPushButtonState()
+        state.color = color
+        return state
+    }
+    
 }

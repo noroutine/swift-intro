@@ -21,6 +21,7 @@
 		496FBD401A0FE77900B18157 /* Greeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FBD3F1A0FE77900B18157 /* Greeter.swift */; };
 		496FBD421A0FEB7D00B18157 /* FibonacciGreeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FBD411A0FEB7D00B18157 /* FibonacciGreeter.swift */; };
 		496FBD441A0FEBBE00B18157 /* FibonacciGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FBD431A0FEBBE00B18157 /* FibonacciGenerator.swift */; };
+		49750C7E1A1BF07F0022471E /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49750C7D1A1BF07F0022471E /* View.xib */; };
 		49CF22821A1AB61200DEE612 /* NRNameChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF22811A1AB61200DEE612 /* NRNameChooser.swift */; };
 		4F8C598FE044A36771BF0658 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2A1B4EFE96792D16E2FC3F5 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		496FBD3F1A0FE77900B18157 /* Greeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Greeter.swift; sourceTree = "<group>"; };
 		496FBD411A0FEB7D00B18157 /* FibonacciGreeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibonacciGreeter.swift; sourceTree = "<group>"; };
 		496FBD431A0FEBBE00B18157 /* FibonacciGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibonacciGenerator.swift; sourceTree = "<group>"; };
+		49750C7D1A1BF07F0022471E /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		49CF22811A1AB61200DEE612 /* NRNameChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRNameChooser.swift; sourceTree = "<group>"; };
 		C2A1B4EFE96792D16E2FC3F5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				490C6B071A0FC02F006A9AA8 /* AppDelegate.swift */,
+				49750C7D1A1BF07F0022471E /* View.xib */,
 				490C6B091A0FC02F006A9AA8 /* MainViewController.swift */,
 				49CF22811A1AB61200DEE612 /* NRNameChooser.swift */,
 				4932A9131A18C16D00AE8E16 /* MyPlayground.playground */,
@@ -213,11 +216,13 @@
 		490C6AFA1A0FC02F006A9AA8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Oleksii Khilkevych";
 				TargetAttributes = {
 					490C6B011A0FC02F006A9AA8 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 2568CE3PLP;
 					};
 					490C6B161A0FC02F006A9AA8 = {
 						CreatedOnToolsVersion = 6.1;
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490C6B121A0FC02F006A9AA8 /* LaunchScreen.xib in Resources */,
+				49750C7E1A1BF07F0022471E /* View.xib in Resources */,
 				490C6B0F1A0FC02F006A9AA8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -366,6 +373,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -393,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -431,9 +440,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SwiftIntro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.noroutine.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftIntro-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -445,9 +458,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SwiftIntro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.noroutine.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftIntro-Bridging-Header.h";
 			};
 			name = Release;
@@ -466,6 +483,7 @@
 				);
 				INFOPLIST_FILE = SwiftIntroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.noroutine.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftIntro.app/SwiftIntro";
 			};
@@ -481,6 +499,7 @@
 				);
 				INFOPLIST_FILE = SwiftIntroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.noroutine.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftIntro.app/SwiftIntro";
 			};

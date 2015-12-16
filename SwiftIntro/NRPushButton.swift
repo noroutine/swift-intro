@@ -11,26 +11,45 @@ import UIKit
 
 class NRPushButton: UIView {
     
+     var states = [
+        "ok": NRPushButtonState.withColor(UIColor.greenColor()),
+        "warning": NRPushButtonState.withColor(UIColor.yellowColor()),
+        "critical": NRPushButtonState.withColor(UIColor.redColor())
+    ]
+
     var resource: NSURL?
 
-    var state: NRPushButtonState
+    var _state: NRPushButtonState?
+    
+    var state: NRPushButtonState? {
+        set {
+            
+            self._state = newValue
+            if (newValue != nil) {
+                self.backgroundColor = newValue!.color
+            }
+            
+        }
+        get {
+            return self._state
+        }
+    }
     
     var buttonText: String?
 
     required init(coder aDecoder: NSCoder) {
-        self.state = NRPushButtonState()
-
-        super.init(coder: aDecoder)
-        
-        self.backgroundColor = self.state.color
+        super.init(coder: aDecoder)!
+        initialize()
     }
     
     override init(frame: CGRect) {
-        self.state = NRPushButtonState()
-        
         super.init(frame: frame)
-        
-        self.backgroundColor = self.state.color
+        initialize()
+    }
+    
+    func initialize() {
+        self.bounds = CGRectInset(self.frame, 3.0, 3.0)
+        self.layer.cornerRadius = 5
     }
     
 }

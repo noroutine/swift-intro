@@ -13,6 +13,7 @@ class FibonacciGreeter: Greeter {
     let fibonacci = FibonacciGenerator()
     
     override func hello(who: String) -> String {
-        return ",".join((1...10).map({ (_) -> String in String(self.fibonacci.next()) }))
+//        return ",".join((1...10).map({ (_) -> String in String(self.fibonacci.next()) }))
+        return "0"
     }
 }

@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Start initializing RNG
         let numberOfRandomBytesToGet :Int  = 48 / 8
         let data = NSMutableData(length: Int(numberOfRandomBytesToGet))
-        var bytes: UnsafeMutablePointer<UInt8> = UnsafeMutablePointer<UInt8>(data!.mutableBytes)
-        var shorts: UnsafeMutablePointer<UInt16> = UnsafeMutablePointer<UInt16>(data!.mutableBytes)
-        SecRandomCopyBytes(kSecRandomDefault, UInt(numberOfRandomBytesToGet), bytes)
+        let bytes: UnsafeMutablePointer<UInt8> = UnsafeMutablePointer<UInt8>(data!.mutableBytes)
+        let shorts: UnsafeMutablePointer<UInt16> = UnsafeMutablePointer<UInt16>(data!.mutableBytes)
+        SecRandomCopyBytes(kSecRandomDefault, numberOfRandomBytesToGet, bytes)
         NSLog("random seed: (\(shorts[0]), \(shorts[1]), \(shorts[2]))")
         seed48(shorts)
         // End initializing RNG
@@ -30,7 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         window?.backgroundColor = UIColor.whiteColor()
-        window?.makeKeyAndVisible()
+        window?.hidden = false
+        window?.keyWindow 
         window?.rootViewController = MainViewController()
                 
         return true

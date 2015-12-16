@@ -24,38 +24,23 @@ class MainViewController: UIViewController {
             .setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.None)
 
 //        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "buttonTapped:"))
-
-        let tappableSize = 40.0
+        var navigationController = UINavigationController()
         
-        let amountHorizontal :Int = Int(floor(UIScreen.mainScreen().bounds.width.native / tappableSize))
-        let amountVertical :Int = Int(floor(UIScreen.mainScreen().bounds.height.native / tappableSize))
+        let tappableSize = 40.0
         
         var (top, left) = (0.0, 0.0)
         var button: NRPushButton? = nil
-        for _ in 1...amountVertical {
-            for _ in 1...amountHorizontal {
-                
-                button = NRPushButton(frame: CGRect(x: left, y: top, width: tappableSize, height: tappableSize))
-                
-                button?.backgroundColor = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: CGFloat(drand48()))
-                
-                button?.layer.cornerRadius = 5
-//                button?.layer.borderColor = UIColor.blueColor().CGColor
-//                button?.layer.borderWidth = 1
-                
-                button?.bounds = CGRectInset(button!.frame, 3.0, 3.0)
-                
-                button?.buttonText = name.next();
-                
-                button?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "buttonTapped:"))
-                
-                self.view.addSubview(button!)
-                
-                left += tappableSize
-            }
-            
-            (top, left) = (top + tappableSize, 0.0)
-        }
+        
+        button = NRPushButton(frame: CGRect(x: 0,y: 0,width: 80, height: 80))
+        button?.state = NRPushButtonState.withColor(UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: CGFloat(drand48())))
+
+        //                button?.layer.borderColor = UIColor.blueColor().CGColor
+        //                button?.layer.borderWidth = 1
+        
+        button?.buttonText = name.next();
+        button?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "buttonTapped:"))
+
+        self.view.addSubview(button!)
         
 //        var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "buttonTapped:", userInfo: nil, repeats: true)
         
@@ -66,7 +51,7 @@ class MainViewController: UIViewController {
 //        for subview in self.view.subviews {
 //            (subview as NRPushButton).backgroundColor = UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: CGFloat(drand48()))
 //        }
-        let button: NRPushButton! = ((sender as UITapGestureRecognizer).view) as NRPushButton
+        let button: NRPushButton! = ((sender as! UITapGestureRecognizer).view) as! NRPushButton
         
         button.backgroundColor =  UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()), blue: CGFloat(drand48()), alpha: CGFloat(drand48()))
 
