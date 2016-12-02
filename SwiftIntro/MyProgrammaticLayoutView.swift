@@ -31,8 +31,7 @@ class MyProgrammaticLayoutView: UIView {
 
         self.addSubview(myButton)
 
-
-        myButton.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchDown)
+        myButton.addTarget(self, action: #selector(MyProgrammaticLayoutView.buttonPressed(_:event:)), forControlEvents: UIControlEvents.TouchDown)
         
         // setup button callback
         self.callbackBlock = buttonPressed

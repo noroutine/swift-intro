@@ -24,11 +24,7 @@ class MainViewController: UIViewController {
             .setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.None)
 
 //        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "buttonTapped:"))
-        var navigationController = UINavigationController()
-        
-        let tappableSize = 40.0
-        
-        var (top, left) = (0.0, 0.0)
+
         var button: NRPushButton? = nil
         
         button = NRPushButton(frame: CGRect(x: 0,y: 0,width: 80, height: 80))
@@ -38,7 +34,7 @@ class MainViewController: UIViewController {
         //                button?.layer.borderWidth = 1
         
         button?.buttonText = name.next();
-        button?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "buttonTapped:"))
+        button?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainViewController.buttonTapped(_:))))
 
         self.view.addSubview(button!)
         
